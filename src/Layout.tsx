@@ -6,12 +6,14 @@ import PolygonBg from './components/icons/PolygonBg'
 
 function Layout() {
     return (
-        <div className='relative h-screen text-white'>
-            <PolygonBg className="absolute -z-10 w-full h-auto top-[-40vh] drop-shadow-2xl" />
-            <Header />
-            <main>
-                <Outlet />
-            </main>
+        <div className='relative min-h-screen text-white bg-primary'>
+            <PolygonBg className="absolute w-full h-auto top-[-40vh] drop-shadow-2xl z-10 pointer-events-none" />
+            <div className='relative z-20'>
+                <Header />
+                <main>
+                    <Outlet />
+                </main>
+            </div>
         </div>
     )
 }
