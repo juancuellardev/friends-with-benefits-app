@@ -10,6 +10,7 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 import { Textarea } from '../ui/textarea'
+import { Button } from '../ui/button'
 
 const englishLevels = [
   { value: "A1", label: "A1" },
@@ -66,6 +67,12 @@ function ReferAFriend() {
             </Label>
             <Textarea id="comments" placeholder="Enter your comments" />
         </div>
+        <Button variant="destructive">
+            Send Referral
+        </Button>
+         <Button>
+            Cancel
+        </Button>
     </div>
   )
 }
