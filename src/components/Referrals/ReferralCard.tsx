@@ -1,7 +1,12 @@
 import React from 'react'
 import { Search } from 'lucide-react'
+import type { Referral } from '@/types/referral';
 
-function ReferralCard() {
+interface Props {
+  referrals: Referral[];
+}
+
+function ReferralCard({ referrals }: Props) {
   return (
      <div className="space-y-6 px-4 pt-4">
       <div className="flex justify-between items-center">
@@ -24,11 +29,11 @@ function ReferralCard() {
       <div className="flex gap-4">
         <div className="flex-1 bg-gradient-to-r from-indigo-900 to-indigo-700 text-white rounded-xl p-6 shadow-md text-center">
           <h2 className="text-lg font-semibold">Total Referidos</h2>
-          <p className="text-3xl font-bold mt-2">200</p>
+          <p className="text-3xl font-bold mt-2">{referrals.length}</p>
         </div>
         <div className="flex-1 bg-gradient-to-r from-indigo-900 to-indigo-700 text-white rounded-xl p-6 shadow-md text-center">
           <h2 className="text-lg font-semibold">Total Hiring</h2>
-          <p className="text-3xl font-bold mt-2">50</p>
+          <p className="text-3xl font-bold mt-2">{referrals.filter((referral) => referral.status === "Hire").length}</p>
         </div>
       </div>
     </div>
