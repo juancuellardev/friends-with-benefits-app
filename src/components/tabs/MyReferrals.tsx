@@ -1,8 +1,24 @@
 import React from 'react'
+import ReferralRow from '../Referrals/ReferralRow'
+import ReferralCard from '../Referrals/ReferralCard'
 
 function MyReferrals() {
   return (
-    <div>MyReferrals</div>
+    <div>
+      <ReferralCard />
+      <div>
+        <ReferralRow />
+        <ReferralRow />
+        <ReferralRow />
+        <ReferralRow />
+        <ReferralRow />
+        <ReferralRow />
+        <ReferralRow />
+        <ReferralRow />
+        <ReferralRow />
+        <ReferralRow />
+      </div>
+    </div>
   )
 }
 
