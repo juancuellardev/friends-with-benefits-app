@@ -1,16 +1,10 @@
 import React from 'react'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import {
-    Card,
-    CardContent,
-    CardDescription,
-    CardFooter,
-    CardHeader,
-    CardTitle,
-} from "@/components/ui/card"
+import { Card, CardContent,} from "@/components/ui/card"
 import { Button } from './ui/button'
 import ReferAFriend from './tabs/ReferAFriend'
 import MyReferrals from './tabs/MyReferrals'
+import Awards from './tabs/Awards'
 
 function TabsReferrals() {
     return (
@@ -18,6 +12,7 @@ function TabsReferrals() {
             <TabsList>
                 <TabsTrigger value="refer-a-friend">Refer a friend</TabsTrigger>
                 <TabsTrigger value="my-referrals">My Referrals</TabsTrigger>
+                <TabsTrigger value="awards">Awards</TabsTrigger>
             </TabsList>
             <TabsContent value="refer-a-friend">
                 <Card>
@@ -30,6 +25,13 @@ function TabsReferrals() {
                 <Card>
                     <CardContent>
                         <MyReferrals />
+                    </CardContent>
+                </Card>
+            </TabsContent>
+            <TabsContent value="awards">
+                <Card>
+                    <CardContent>
+                        <Awards />
                     </CardContent>
                 </Card>
             </TabsContent>
