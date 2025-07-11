@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import { Button } from "@/components/ui/button"
 import HomePage from "./pages/Home";
+import AdminPage from "./pages/Admin";
 import Layout from "./Layout";
 
 function App() {
@@ -18,6 +19,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
+        </Route>
+        <Route path="/admin" element={<Layout />}>
+          <Route index element={<AdminPage />} />
         </Route>
       </Routes>
     </Router>
