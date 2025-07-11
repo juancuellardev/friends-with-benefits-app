@@ -1,6 +1,8 @@
 import React from 'react'
 import { Search } from 'lucide-react'
 import type { Referral } from '@/types/referral';
+import DownloadButton from '@/components/DownloadButton';
+
 
 interface Props {
   referrals: Referral[];
@@ -24,7 +26,7 @@ function ReferralCard({ referrals }: Props) {
           <Search className="absolute right-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400 pointer-events-none" />
         </div>
     </div>
-
+        <DownloadButton/>
     <div className="space-y-4">
       <div className="flex gap-4">
         <div className="flex-1 bg-gradient-to-r from-indigo-900 to-indigo-700 text-white rounded-xl p-6 shadow-md text-center">
