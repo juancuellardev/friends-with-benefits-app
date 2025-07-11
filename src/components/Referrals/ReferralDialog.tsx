@@ -15,7 +15,7 @@ function ReferralDialog({ referral, open, setOpen }: Props) {
             <DialogContent className="sm:max-w-[425px]">
                 {referral && (
                     <DialogHeader>
-                        <DialogTitle className='text-red-700'>Referral Details</DialogTitle>
+                        <DialogTitle className='text-destructive'>Referral Details</DialogTitle>
                         <label className='text-blue-800'>Full Name</label>
                         <p className='text-gray-500'>{referral.full_name}</p>
                         <label className='text-blue-800'>Phone Number</label>
@@ -30,7 +30,7 @@ function ReferralDialog({ referral, open, setOpen }: Props) {
                                     <label className='text-blue-800'>Bonus</label>
                                     <p className='text-gray-500'>
                                         <span className='font-bold'>{referral.bonus_status}</span>
-                                        <span className='font-bold'>${referral.bonus_value}</span>
+                                        {referral.bonus_status === "Send to Payment" && <span className='font-bold'>${referral.bonus_value}</span>}
                                     </p>
                                 </>
                             )

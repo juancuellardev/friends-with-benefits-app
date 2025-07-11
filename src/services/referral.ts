@@ -1,5 +1,18 @@
-import type { Referral } from "@/types/referral"
+import { BONUS_STATUS, ENGLISH_LEVEL, STATUS } from "@/consts";
+import type { BonusStatus, Referral, Status } from "@/types/referral"
 
+
+export const getStatuses = (): { value: Status; label: string }[] => {
+  return STATUS.map((status) => ({ value: status, label: status }));
+}
+
+export const getEnglishLevels = (): { value: string; label: string }[] => {
+  return ENGLISH_LEVEL.map((level) => ({ value: level, label: level }));
+}
+
+export const getBonusStatuses = (): { value: BonusStatus; label: string }[] => {
+  return BONUS_STATUS.map((status) => ({ value: status, label: status }));
+}
 
 export const getReferrals = (): Referral[] => {
   const data = localStorage.getItem("referrals");

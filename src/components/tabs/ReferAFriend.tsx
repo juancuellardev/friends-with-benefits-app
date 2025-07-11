@@ -11,24 +11,13 @@ import {
 import { Textarea } from '../ui/textarea'
 import { Button } from '../ui/button'
 import { useState } from 'react'
-import type { Referral } from '@/types/referral'
-import { addReferral } from '@/services/referral'
-
-const englishLevels = [
-    { value: "A1", label: "A1" },
-    { value: "A2", label: "A2" },
-    { value: "B1", label: "B1" },
-    { value: "B1+", label: "B1+" },
-    { value: "B2", label: "B2" },
-    { value: "B2+", label: "B2+" },
-    { value: "C1", label: "C1" },
-    { value: "C2", label: "C2" },
-]
+import type { EnglishLevel, Referral } from '@/types/referral'
+import { addReferral, getEnglishLevels } from '@/services/referral'
 
 function ReferAFriend() {
     const [fullName, setFullName] = useState<string>('')
     const [phoneNumber, setPhoneNumber] = useState<string>('')
-    const [englishLevel, setEnglishLevel] = useState<string>('')
+    const [englishLevel, setEnglishLevel] = useState<EnglishLevel | ''>('')
     const [comments, setComments] = useState<string>('')
 
     const resetForm = () => {
@@ -43,7 +32,7 @@ function ReferAFriend() {
         const newReferral: Referral = {
             full_name: fullName,
             phone_number: phoneNumber,
-            english_level: englishLevel,
+            english_level: englishLevel as EnglishLevel,
             status: 'Pending',
             created_at: new Date().toISOString(),
             created_by: 'John Doe',
@@ -78,12 +67,12 @@ function ReferAFriend() {
                     <Languages className='text-destructive' width={20} height={20} />
                     English Level
                 </Label>
-                <Select  value={englishLevel} onValueChange={setEnglishLevel}>
+                <Select  value={englishLevel} onValueChange={(value) => setEnglishLevel(value as EnglishLevel)}>
                     <SelectTrigger id="english-level" className='w-full'>
                         <SelectValue placeholder="Select English Level" />
                     </SelectTrigger>
                     <SelectContent>
-                        {englishLevels.map((level) => (
+                        {getEnglishLevels().map((level) => (
                             <SelectItem key={level.value} value={level.value}>
                                 {level.label}
                             </SelectItem>
