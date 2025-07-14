@@ -1,14 +1,6 @@
 import React from 'react'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import {
-    Card,
-    CardContent,
-    CardDescription,
-    CardFooter,
-    CardHeader,
-    CardTitle,
-} from "@/components/ui/card"
-import { Button } from './ui/button'
+import { Card, CardContent,} from "@/components/ui/card"
 import ReferAFriend from './tabs/ReferAFriend'
 import MyReferrals from './tabs/MyReferrals'
 

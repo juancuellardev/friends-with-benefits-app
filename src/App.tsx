@@ -1,13 +1,12 @@
 import {
   BrowserRouter as Router,
   Routes,
-  Outlet,
   Route,
-  Link
 } from "react-router-dom";
-import { Button } from "@/components/ui/button"
 import HomePage from "./pages/Home";
-import Layout from "./Layout";
+import AdminPage from "./pages/Admin";
+import Layout from "./components/Layout";
+import AdminLayout from "./components/AdminLayout";
 
 function App() {
   return (
@@ -18,6 +17,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
+        </Route>
+        <Route path="/admin" element={<AdminLayout />}>
+          <Route index element={<AdminPage />} />
         </Route>
       </Routes>
     </Router>
