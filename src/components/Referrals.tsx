@@ -13,6 +13,7 @@ function Referrals({ handleOpen }: Props) {
     const [referrals, setReferrals] = useState<Referral[]>([])
     useEffect(() => {
         setReferrals(getReferrals())
+        console.log("Referrals:", getReferrals())
     }, [])
     return (
         <div>

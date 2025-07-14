@@ -27,13 +27,17 @@ export const addReferral = (referral: Referral): void => {
   referrals.push(referral);
   localStorage.setItem("referrals", JSON.stringify(referrals));
 };
-
-export const updateReferral = (index: number, referral: Referral): void => {
+export const updateReferral = (updated: Referral): void => {
   const referrals = getReferrals();
+  const index = referrals.findIndex(
+    (r) => r.phone_number === updated.phone_number
+  );
+
   if (index !== -1) {
-    referrals[index] = referral;
+    referrals[index] = updated;
     localStorage.setItem("referrals", JSON.stringify(referrals));
   }
 };
+
 
 

@@ -29,8 +29,8 @@ function ReferralDialog({ referral, open, setOpen }: Props) {
                                 <>
                                     <label className='text-blue-800'>Bonus</label>
                                     <p className='text-gray-500'>
-                                        <span className='font-bold'>{referral.bonus_status}</span>
-                                        {referral.bonus_status === "Send to Payment" && <span className='font-bold'>${referral.bonus_value}</span>}
+                                        <span className='text-gray-500'>{referral.bonus_status}</span>
+                                        {referral.bonus_status === "Send to Payment" && <span className='text-gray-500'> ${referral.bonus_value}</span>}
                                     </p>
                                 </>
                             )
